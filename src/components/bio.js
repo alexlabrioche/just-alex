@@ -1,68 +1,83 @@
-/**
- * Bio component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
+import useInterval from "../hooks/useinterval"
+import styled from "styled-components"
+import Link from "gatsby-link"
+import ExternalLink from "./external-link"
 
-import { rhythm } from "../utils/typography"
+const BioWrapper = styled.div`
+  * {
+    margin-bottom: 1rem;
+  }
+  h1 {
+    margin-bottom: 3rem;
+    font-size: ${({ theme }) => theme.fontSize.xxxxl};
+  }
+  .bio-subtitle {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+  }
+  @media screen and (min-width: ${({ theme }) => theme.screens.md}) {
+    h1  {
+      margin-bottom: 6rem;
+      font-size: ${({ theme }) => theme.fontSize.xxxxxxl};
+    }
+    .bio-subtitle {
+      flex-direction: row;
+    }
+  }
+`
 
 const Bio = () => {
-  const data = useStaticQuery(graphql`
-    query BioQuery {
-      avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
-        childImageSharp {
-          fixed(width: 50, height: 50) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      site {
-        siteMetadata {
-          author
-          social {
-            twitter
-          }
+  const data = useStaticQuery(BIO_QUERY)
+  const { author, social } = data.site.siteMetadata
+  const [helloCounter, setHelloCounter] = React.useState(0)
+  useInterval(() => {
+    sayHello.length > helloCounter + 1
+      ? setHelloCounter(helloCounter + 1)
+      : setHelloCounter(0)
+  }, 3000)
+  const sayHello = [
+    "Hello",
+    "Namasté",
+    "Selamat pagi",
+    "Kónnichi wa",
+    "Bonjour",
+  ]
+
+  return (
+    <BioWrapper>
+      <h1>{sayHello[helloCounter]}, </h1>
+      <div className="bio-subtitle">
+        <p>
+          Je m'appel {author}, oui juste {author}.&nbsp;
+        </p>
+        <i>(pas Alexandre ni Alexis...)</i>
+      </div>
+      <p>
+        Je suis <Link to="/me">développeur web</Link>. Je publie ici quelques{" "}
+        <Link to="/work">travaux</Link> et plus rarement des{" "}
+        <Link to="/thoughts">pensées</Link>. Tu peux aussi aller faire un tour
+        sur mon{" "}
+        <ExternalLink to={`https://github.com/${social.github}`}>
+          Github.
+        </ExternalLink>
+      </p>
+    </BioWrapper>
+  )
+}
+const BIO_QUERY = graphql`
+  query BioQuery {
+    site {
+      siteMetadata {
+        author
+        social {
+          github
         }
       }
     }
-  `)
-
-  const { author, social } = data.site.siteMetadata
-  return (
-    <div
-      style={{
-        display: `flex`,
-        marginBottom: rhythm(2.5),
-      }}
-    >
-      <Image
-        fixed={data.avatar.childImageSharp.fixed}
-        alt={author}
-        style={{
-          marginRight: rhythm(1 / 2),
-          marginBottom: 0,
-          minWidth: 50,
-          borderRadius: `100%`,
-        }}
-        imgStyle={{
-          borderRadius: `50%`,
-        }}
-      />
-      <p>
-        Written by <strong>{author}</strong> who lives and works in San
-        Francisco building useful things.
-        {` `}
-        <a href={`https://twitter.com/${social.twitter}`}>
-          You should follow him on Twitter
-        </a>
-      </p>
-    </div>
-  )
-}
+  }
+`
 
 export default Bio
