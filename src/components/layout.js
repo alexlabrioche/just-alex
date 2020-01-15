@@ -1,6 +1,9 @@
 import React from "react"
 import Appbar from "../components/navigation/appbar"
 import styled from "styled-components"
+import { DarkModeProvider } from "../context/darkModeContext"
+import { ThemeProvider } from "styled-components"
+import theme from "../theme/"
 
 const LayoutWrapper = styled.div`
   display: flex;
@@ -13,10 +16,14 @@ const LayoutWrapper = styled.div`
 
 function Layout({ location, children }) {
   return (
-    <LayoutWrapper>
-      <Appbar home={location.pathname === "/"} />
-      {children}
-    </LayoutWrapper>
+    <ThemeProvider theme={theme}>
+      <DarkModeProvider>
+        <LayoutWrapper>
+          <Appbar home={location.pathname === "/"} />
+          {children}
+        </LayoutWrapper>
+      </DarkModeProvider>
+    </ThemeProvider>
   )
 }
 
