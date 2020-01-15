@@ -2,11 +2,12 @@ import React from "react"
 import GlobalStyle from "../styles"
 
 const LS_ITEM_NAME = "dark-mode"
+const initialState = false
 
-const DarkModeContext = React.createContext()
+const DarkModeContext = React.createContext(initialState)
 
 function DarkModeProvider({ children }) {
-  const [darkMode, setDarkMode] = React.useState(false)
+  const [darkMode, setDarkMode] = React.useState(initialState)
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode)

@@ -5,7 +5,6 @@ import PageContainer from "../components/page-container"
 import Link from "gatsby-link"
 
 function BlogIndex({ data, location }) {
-  console.info(data)
   const posts = data.allMarkdownRemark.edges
   return (
     <Layout location={location}>
