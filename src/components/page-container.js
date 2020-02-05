@@ -5,7 +5,7 @@ const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  justify-content: space-around;
+  justify-content: flex-start;
   padding: ${({ theme }) => theme.size[4]};
   @media screen and (min-width: ${({ theme }) => theme.screens.sm}) {
     padding: ${({ theme }) => theme.size[8]};

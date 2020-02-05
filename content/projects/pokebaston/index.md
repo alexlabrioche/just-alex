@@ -1,11 +1,11 @@
 ---
 title: Poke baston
 frontmatter___featuredImage: ../../img/poke-baston.png
-date: "2019-11-01T22:12:03.284Z"
+date: "2019-10-01T22:12:03.284Z"
 description: "C'est l'heure de la bagarre"
 ---
 
-<a href="https://alexlabrioche.github.io/poke-baston/" target="_blank">Le projet est déployé sur une Page Github, visible ici</a>
+##### <a href="https://alexlabrioche.github.io/poke-baston/" target="_blank">Le projet est visible ici</a>
 
 #### L'idée :
 
