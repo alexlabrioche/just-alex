@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PageContainer from "../components/page-container"
 import Link from "gatsby-link"
+import { graphql } from "gatsby"
 
 function BlogIndex({ data, location }) {
   const posts = data.allMarkdownRemark.edges
@@ -46,7 +47,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { fileAbsolutePath: { regex: "/(blog)/.*.md$/" } }
+    ) {
       edges {
         node {
           excerpt

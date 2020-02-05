@@ -14,10 +14,10 @@ const PageContainer = styled.div`
     padding: ${({ theme }) => theme.size[16]};
   }
   @media screen and (min-width: ${({ theme }) => theme.screens.lg}) {
-    padding: ${({ theme }) => theme.size[36]} ${({ theme }) => theme.size[48]};
+    padding: ${({ theme }) => theme.size[16]} ${({ theme }) => theme.size[48]};
   }
   @media screen and (min-width: ${({ theme }) => theme.screens.xl}) {
-    padding: ${({ theme }) => theme.size[36]} ${({ theme }) => theme.size[64]};
+    padding: ${({ theme }) => theme.size[20]} ${({ theme }) => theme.size[64]};
   }
 `
 export default PageContainer

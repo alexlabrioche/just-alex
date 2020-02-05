@@ -1,6 +1,5 @@
 import { createGlobalStyle, css } from "styled-components"
 import darkTheme from "./darkTheme"
-import reset from "styled-reset"
 
 const base = css`
   body {
@@ -11,9 +10,10 @@ const base = css`
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-
     h1 {
       font-size: ${({ theme }) => theme.fontSize.xxxxxxl};
+      font-family: ${({ theme }) => theme.fontFamily.sans};
+      color: ${({ theme }) => theme.colors.green[500]};
     }
     h2 {
       font-size: ${({ theme }) => theme.fontSize.xxxxxl};
@@ -66,6 +66,14 @@ const base = css`
   *::selection {
     background: ${({ theme }) => theme.colors.green[300]};
   }
+  blockquote {
+    margin-left: 0;
+  }
+  ul,
+  ol {
+    margin-left: 0;
+    list-style-type: none;
+  }
   nav {
     height: ${({ theme }) => theme.size[20]};
     padding: ${({ theme }) => theme.size[4]};
@@ -104,7 +112,6 @@ const mediaQueries = css`
 `
 
 const GlobalStyle = createGlobalStyle`
-  ${reset}
   ${base}
   ${darkTheme}
   ${mediaQueries}

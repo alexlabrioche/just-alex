@@ -5,7 +5,7 @@ import Link from "gatsby-link"
 import AppLogo from "../app-logo"
 import NavigationWrapper from "./appbar-wrapper"
 
-function Navigation({ home }) {
+function Navigation() {
   const { darkMode, toggleDarkMode } = React.useContext(DarkModeContext)
   return (
     <NavigationWrapper>
@@ -15,16 +15,13 @@ function Navigation({ home }) {
         </Link>
       </div>
       <div className="nav-links nav-item-container">
-        {!home && (
-          <>
-            <Link to="/me">Moi ?</Link>
-            <Link to="/work">Travaux</Link>
-            <Link to="/thoughts">Pensées</Link>
-          </>
-        )}
-
+        <>
+          <Link to="/me">Moi ?</Link>
+          <Link to="/work">Projets</Link>
+          {/* <Link to="/thoughts">Pensées</Link> */}
+        </>
         <ThemeIcon
-          size={20}
+          size={30}
           id="nav-theme-icon"
           toggleIcon={darkMode}
           setDarkMode={toggleDarkMode}

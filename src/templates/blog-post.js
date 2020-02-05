@@ -3,14 +3,16 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm, scale } from "../utils/typography"
+import { rhythm } from "../utils/typography"
 import PageContainer from "../components/page-container"
+import Img from "gatsby-image"
 
 function BlogPostTemplate({ data, location, pageContext }) {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata.title
   const { previous, next } = pageContext
-
+  let featuredImgFluid =
+    post.frontmatter.frontmatter___featuredImage.childImageSharp.fluid
   return (
     <Layout location={location} title={siteTitle}>
       <SEO
@@ -21,7 +23,7 @@ function BlogPostTemplate({ data, location, pageContext }) {
         <article>
           <header>
             <h1>{post.frontmatter.title}</h1>
-            <p
+            {/* <p
               style={{
                 ...scale(-1 / 5),
                 display: `block`,
@@ -29,7 +31,8 @@ function BlogPostTemplate({ data, location, pageContext }) {
               }}
             >
               {post.frontmatter.date}
-            </p>
+            </p> */}
+            {/* <Img fluid={featuredImgFluid} /> */}
           </header>
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
           <hr
@@ -85,8 +88,15 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "MMMM YYYY")
         description
+        frontmatter___featuredImage {
+          childImageSharp {
+            fluid(maxWidth: 1600) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }

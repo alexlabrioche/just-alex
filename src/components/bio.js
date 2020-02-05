@@ -37,7 +37,7 @@ const Bio = () => {
     sayHello.length > helloCounter + 1
       ? setHelloCounter(helloCounter + 1)
       : setHelloCounter(0)
-  }, 3000)
+  }, 2500)
   const sayHello = [
     "Hello",
     "Namasté",
@@ -53,16 +53,15 @@ const Bio = () => {
         <p>
           Je m'appel {author}, oui juste {author}.&nbsp;
         </p>
-        <i>(pas Alexandre ni Alexis...)</i>
       </div>
       <p>
         Je suis <Link to="/me">développeur web</Link>. Je publie ici quelques{" "}
-        <Link to="/work">travaux</Link> et plus rarement des{" "}
-        <Link to="/thoughts">pensées</Link>. Tu peux aussi aller faire un tour
+        <Link to="/work">projets personnels</Link>.
+        {/* Tu peux aussi aller faire un tour
         sur mon{" "}
         <ExternalLink to={`https://github.com/${social.github}`}>
           Github.
-        </ExternalLink>
+        </ExternalLink> */}
       </p>
     </BioWrapper>
   )
