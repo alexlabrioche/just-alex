@@ -17,18 +17,28 @@ const base = css`
     }
     h2 {
       font-size: ${({ theme }) => theme.fontSize.xxxxxl};
+      font-family: ${({ theme }) => theme.fontFamily.sans};
+      text-transform: none;
     }
     h3 {
       font-size: ${({ theme }) => theme.fontSize.xxxxl};
+      font-family: ${({ theme }) => theme.fontFamily.sans};
+      text-transform: none;
     }
     h4 {
       font-size: ${({ theme }) => theme.fontSize.xxxl};
+      font-family: ${({ theme }) => theme.fontFamily.sans};
+      text-transform: none;
     }
     h5 {
       font-size: ${({ theme }) => theme.fontSize.xxl};
+      font-family: ${({ theme }) => theme.fontFamily.sans};
+      text-transform: none;
     }
     h6 {
       font-size: ${({ theme }) => theme.fontSize.xl};
+      font-family: ${({ theme }) => theme.fontFamily.sans};
+      text-transform: none;
     }
     i {
       font-style: italic;
