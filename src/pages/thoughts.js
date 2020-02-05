@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PageContainer from "../components/page-container"
 import Link from "gatsby-link"
-import { graphql } from "gatsby"
+// import { graphql } from "gatsby"
 
 function BlogIndex({ data, location }) {
   const posts = data.allMarkdownRemark.edges
@@ -40,30 +40,30 @@ function BlogIndex({ data, location }) {
 
 export default BlogIndex
 
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { fileAbsolutePath: { regex: "/(blog)/.*.md$/" } }
-    ) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            description
-          }
-        }
-      }
-    }
-  }
-`
+// export const pageQuery = graphql`
+//   query {
+//     site {
+//       siteMetadata {
+//         title
+//       }
+//     }
+//     allMarkdownRemark(
+//       sort: { fields: [frontmatter___date], order: DESC }
+//       filter: { fileAbsolutePath: { regex: "/(blog)/.*.md$/" } }
+//     ) {
+//       edges {
+//         node {
+//           excerpt
+//           fields {
+//             slug
+//           }
+//           frontmatter {
+//             date(formatString: "MMMM DD, YYYY")
+//             title
+//             description
+//           }
+//         }
+//       }
+//     }
+//   }
+// `
