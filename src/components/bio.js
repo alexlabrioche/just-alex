@@ -3,7 +3,6 @@ import { useStaticQuery, graphql } from "gatsby"
 import useInterval from "../hooks/useinterval"
 import styled from "styled-components"
 import Link from "gatsby-link"
-import ExternalLink from "./external-link"
 
 const BioWrapper = styled.div`
   * {
@@ -31,7 +30,7 @@ const BioWrapper = styled.div`
 
 const Bio = () => {
   const data = useStaticQuery(BIO_QUERY)
-  const { author, social } = data.site.siteMetadata
+  const { author } = data.site.siteMetadata
   const [helloCounter, setHelloCounter] = React.useState(0)
   useInterval(() => {
     sayHello.length > helloCounter + 1

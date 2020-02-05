@@ -5,14 +5,14 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 import PageContainer from "../components/page-container"
-import Img from "gatsby-image"
+// import Img from "gatsby-image"
 
 function BlogPostTemplate({ data, location, pageContext }) {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata.title
   const { previous, next } = pageContext
-  let featuredImgFluid =
-    post.frontmatter.frontmatter___featuredImage.childImageSharp.fluid
+  // let featuredImgFluid =
+  //   post.frontmatter.frontmatter___featuredImage.childImageSharp.fluid
   return (
     <Layout location={location} title={siteTitle}>
       <SEO

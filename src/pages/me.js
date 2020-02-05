@@ -11,6 +11,7 @@ const ME_PAGE_QUERY = graphql`
       siteMetadata {
         social {
           linkedIn
+          github
         }
       }
     }
@@ -23,12 +24,17 @@ function Me({ location }) {
     <Layout location={location}>
       <SEO title="moi" />
       <PageContainer>
-        <p>
-          Plus d'infos sur{" "}
+        <h5>
+          Les choses sérieuses sont sur{" "}
           <ExternalLink to={`https://www.linkedin.com/in/${social.linkedIn}/`}>
             LinkedIn
-          </ExternalLink>{" "}
-        </p>
+          </ExternalLink>
+          , le reste est sur{" "}
+          <ExternalLink to={`https://github.com/${social.github}`}>
+            Github
+          </ExternalLink>
+          . 🥳
+        </h5>
       </PageContainer>
     </Layout>
   )

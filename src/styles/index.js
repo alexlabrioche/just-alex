@@ -40,9 +40,7 @@ const base = css`
       font-family: ${({ theme }) => theme.fontFamily.sans};
       text-transform: none;
     }
-    i {
-      font-style: italic;
-    }
+
     p,
     i,
     li {

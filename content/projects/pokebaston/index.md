@@ -23,4 +23,4 @@ Utiliser l'api pokeapi autrement que pour faire le classique pokedex. Pokebaston
 
 - React avec le bundle CRA (Create-react-app)
 - API <a href="https://pokeapi.co/" target="_blank">pokeapi</a>
-- CSS basé sur <a href="https://nostalgic-css.github.io/NES.css/" target="_blank">NES.css</a> et ré implémenté sur sous forme de composants
+- CSS basé sur <a href="https://nostalgic-css.github.io/NES.css/" target="_blank">NES.css</a> et ré implémenté en composants React
