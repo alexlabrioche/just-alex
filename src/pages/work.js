@@ -2,7 +2,6 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PageContainer from "../components/page-container"
-import Grid from "../components/grid"
 import Link from "gatsby-link"
 import { graphql } from "gatsby"
 

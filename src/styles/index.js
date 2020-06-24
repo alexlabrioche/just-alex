@@ -40,11 +40,13 @@ const base = css`
       font-family: ${({ theme }) => theme.fontFamily.sans};
       text-transform: none;
     }
-
+    li {
+      margin-bottom: 0;
+    }
     p,
     i,
     li {
-      line-height: 1.6em;
+      line-height: 1.8em;
     }
     a {
       color: ${({ theme }) => theme.colors.baseFont};
@@ -79,7 +81,7 @@ const base = css`
   }
   ul,
   ol {
-    margin-left: 0;
+    margin-left: 1rem;
     list-style-type: none;
   }
   nav {

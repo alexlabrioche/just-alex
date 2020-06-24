@@ -20,6 +20,7 @@ function DarkModeProvider({ children }) {
       setDarkMode(lsTheme)
     }
   }, [])
+
   return (
     <DarkModeContext.Provider
       value={{

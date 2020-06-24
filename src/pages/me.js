@@ -38,8 +38,8 @@ function Me({ location }) {
 
         <p>
           <br />
-          <b>En bref : </b>29 ans développeur React, GraphQL, Node et adepte de
-          la philosophie{" "}
+          <b>En bref :</b> Développeur React, GraphQL, Node et adepte de la
+          philosophie{" "}
           <a
             href="https://manifesto.softwarecraftsmanship.org/#/fr-fr"
             target="_blank"
@@ -79,7 +79,8 @@ function Me({ location }) {
           </a>
           .
           <br />
-          Je décide après cette expérience, de retourner en cours chez{" "}
+          Je décide après cette expérience, de retourner en sur les bancs de
+          l'école chez{" "}
           <a
             href="https://simplon.co/"
             target="_blank"
@@ -89,10 +90,26 @@ function Me({ location }) {
           </a>{" "}
           pour approfondir mes connaissances.
           <br />
-          <h6 style={{ fontWeight: "400", fontStyle: "normal" }}>
+          <br />
+          Juin 2020 je rentre en tant que développeur Front-End React dans la
+          Start-Up{" "}
+          <a
+            href="https://cyclofix.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Cyclofix
+          </a>
+          . <b>Ma mission au quotidien :</b>{" "}
+          <ul>
+            <li>Comprendre les besoins des Fixers (réparateurs)</li>
+            <li>optimiser les interfaces existantes</li>
+            <li>Proposer et développer de nouvelles Features</li>
+          </ul>
+          {/* <h6 style={{ fontWeight: "400", fontStyle: "normal" }}>
             Je suis actuellement à la recherche de nouvelles opportunités
             professionnelles.
-          </h6>
+          </h6> */}
         </p>
       </PageContainer>
     </Layout>
